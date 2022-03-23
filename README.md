@@ -1,17 +1,17 @@
-# Este é um código de CRUD utilizando conceitos de JPA + Hibernate + MySQL`
+## CRUD utilizando conceitos de JPA + Hibernate + MySQL
 
 
 
-**Clone the application** 
+**Clone o repositório** 
 ```
-clone o repositório git clone `git clone https://github.com/alexjosesilva/aplicacao_jpa`
+git clone https://github.com/alexjosesilva/aplicacao_jpa
 ```
 ## Requirements
 
 1. Java - 1.8.x
 2. Maven - 3.x.x
 3. Mysql - 5.x.x
-4. Hhibernate e mysql estão no repositório não precisa buscar em outra fonte
+4. Hibernate e Mysql estão no repositório não precisa buscar outra fonte
 
 ## BD
 5) criar o banco de dados crudjpa
