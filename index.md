@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+## CRUD utilizando conceitos de JPA + Hibernate + MySQL
 
-You can use the [editor on GitHub](https://github.com/alexjosesilva/aplicacao-jpa/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+**Clone o repositório** 
+```
+git clone https://github.com/alexjosesilva/aplicacao_jpa
+```
+## Requirements
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. Java - 1.8.x
+2. Maven - 3.x.x
+3. Mysql - 5.x.x
+4. Hibernate e Mysql estão no repositório não precisa buscar outra fonte
 
-```markdown
-Syntax highlighted code block
+## BD
+5) criar o banco de dados crudjpa
+6) Alterar o user e passord no arquivo persistence.xml
+7) criar o BD no mysql
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+CREATE DATABASE crudjpa;
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Run aplicacao executar o Aplicacao.java
 
-### Jekyll Themes
+8) Run -> Java Aplication
+```markdown
+public class Aplicacao {
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/alexjosesilva/aplicacao-jpa/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+	public static void main(String[] args) {
+		
+		//salvar
+		Carro carro1 = new Carro();	
+		carro1.setNome("Ferrari");
+		
+		Carro carro2 = new Carro();	
+		carro2.setNome("BMW");
+		
+		Carro carro3 = new Carro();	
+		carro3.setNome("Camaro");
+		
+		CarroController car = new CarroController();
+		
+		//salvar
+		car.salvar(carro1);
+		car.salvar(carro2);
+		car.salvar(carro3);
+		
+		//remover
+		car.remover(carro1);
+		
+		
+		//Listar
+		List<Carro> carros = car.listar();
+		for (int i = 0; i < carros.size() ; i++) {
+			System.out.print(" Nome: "+ carros.get(i).getNome());
+		}
+		
+		//atualizar
+		car.update(carro2,"Posh",118);
+		
+	}
 
-### Support or Contact
+}
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```
+## License
+MIT © [Alex Jose](https://github.com/alexjosesilva)
+
+## Linkedin 
+[Alex Jose (https://www.linkedin.com/in/alexjosesilva/)
